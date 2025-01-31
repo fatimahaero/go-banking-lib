@@ -23,6 +23,8 @@ func InitiateLog() {
 		log.Fatal().Err(err).Msg("Failed to open log file")
 	}
 
+	zerolog.SetGlobalLevel(zerolog.InfoLevel)
+
 	// Zerolog configuration to write log to file
 	log.Logger = zerolog.New(logFile).With().
 		Timestamp().
